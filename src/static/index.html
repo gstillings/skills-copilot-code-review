@@ -12,8 +12,52 @@
     />
   </head>
   <body>
-    <div class="announcement-banner">
-      📢 Activity registration is open until the end of the month. Don't lose your spot!
+    <div id="announcement-center" class="announcement-center" aria-live="polite">
+      <div class="announcement-banner-shell">
+        <div class="announcement-banner-main">
+          <span class="announcement-icon" aria-hidden="true">📢</span>
+          <div>
+            <div class="announcement-label">School Announcements</div>
+            <p id="announcement-summary">Loading latest announcement...</p>
+          </div>
+        </div>
+        <button id="toggle-announcements" class="announcement-toggle" aria-expanded="false" aria-controls="announcement-panel">
+          View all announcements
+        </button>
+      </div>
+      <section id="announcement-panel" class="announcement-panel hidden" aria-label="Announcement panel">
+        <div class="announcement-panel-header">
+          <h3>All Announcements</h3>
+          <span id="announcement-role-note" class="announcement-role-note"></span>
+        </div>
+        <div id="announcement-list" class="announcement-list"></div>
+
+        <form id="announcement-form" class="announcement-form hidden">
+          <h4 id="announcement-form-title">Add Announcement</h4>
+          <div class="form-group">
+            <label for="announcement-title">Title</label>
+            <input type="text" id="announcement-title" required maxlength="80" placeholder="Announcement title" />
+          </div>
+          <div class="form-group">
+            <label for="announcement-message">Message</label>
+            <textarea id="announcement-message" required rows="3" maxlength="500" placeholder="What should students and families know?"></textarea>
+          </div>
+          <div class="announcement-date-grid">
+            <div class="form-group">
+              <label for="announcement-start-date">Start Date (optional)</label>
+              <input type="date" id="announcement-start-date" />
+            </div>
+            <div class="form-group">
+              <label for="announcement-expiration-date">Expiration Date</label>
+              <input type="date" id="announcement-expiration-date" required />
+            </div>
+          </div>
+          <div class="announcement-form-actions">
+            <button type="submit" id="announcement-submit">Save announcement</button>
+            <button type="button" id="announcement-cancel" class="secondary-button hidden">Cancel edit</button>
+          </div>
+        </form>
+      </section>
     </div>
     <header>
       <h1>Mergington High School</h1>
