@@ -664,10 +664,255 @@ footer {
 #logout-button:hover {
   background-color: rgba(255, 255, 255, 0.3);
 }
-.announcement-banner {
-  background-color: #4caf50;
-  color: white;
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  background-color: #fff;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 2px rgba(83, 75, 174, 0.1);
+}
+
+.announcement-center {
+  margin-bottom: 12px;
+}
+
+.announcement-banner-shell {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+  border: 1px solid #c8e6c9;
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+
+.announcement-banner-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.announcement-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+  margin-top: 3px;
+}
+
+.announcement-label {
+  color: #1b5e20;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+#announcement-summary {
+  margin-top: 4px;
+  color: #2e7d32;
+  font-size: 0.9rem;
+}
+
+.announcement-toggle {
+  background-color: #2e7d32;
+  color: #fff;
+  border-radius: 20px;
+  padding: 7px 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.announcement-toggle:hover {
+  background-color: #1b5e20;
+}
+
+.announcement-panel {
+  margin-top: 10px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+.announcement-panel-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.announcement-panel-header h3 {
+  margin: 0;
+  color: var(--primary);
+}
+
+.announcement-role-note {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+.announcement-list {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.announcement-item {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #fcfcfc;
+}
+
+.announcement-item-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.announcement-item-header h4 {
+  margin: 0;
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.announcement-status {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 12px;
+  padding: 3px 8px;
+}
+
+.announcement-status.active {
+  background-color: var(--success-light);
+  color: var(--success);
+}
+
+.announcement-status.upcoming {
+  background-color: var(--info-light);
+  color: var(--info);
+}
+
+.announcement-status.expired {
+  background-color: var(--warning-light);
+  color: var(--warning);
+}
+
+.announcement-item-message {
+  margin-bottom: 8px;
+}
+
+.announcement-item-dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+
+.announcement-item-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.secondary-button {
+  background-color: #eceff1;
+  color: #37474f;
+}
+
+.secondary-button:hover {
+  background-color: #dfe5e8;
+}
+
+.danger-button {
+  background-color: var(--error);
+  color: #fff;
+}
+
+.danger-button:hover {
+  background-color: #b71c1c;
+}
+
+.announcement-form {
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+.announcement-form h4 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.announcement-date-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.announcement-form-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.announcement-empty-state {
   text-align: center;
-  padding: 15px;
-  font-weight: bold;
+  color: var(--text-secondary);
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  padding: 10px;
+  background-color: #fafafa;
+}
+
+@media (max-width: 767px) {
+  .announcement-banner-shell {
+    padding: 10px;
+  }
+
+  .announcement-toggle {
+    width: 100%;
+  }
+
+  .announcement-date-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .announcement-item-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
