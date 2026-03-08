@@ -315,7 +315,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function refreshAnnouncements() {
     try {
-      const response = await fetch("/announcements?include_expired=true");
+      const url = isTeacherUser()
+        ? "/announcements?include_expired=true"
+        : "/announcements";
+      const response = await fetch(url);
       if (!response.ok) {
         announcementSummary.textContent = "Unable to load announcements.";
         return;
